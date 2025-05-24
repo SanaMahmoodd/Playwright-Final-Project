@@ -30,7 +30,7 @@ It tests essential features such as login, cart functionality, checkout, and pro
 
 3. **Run all tests**
    ```bash
-   npm run test
+   npx playwright test
    ```
 
 ---
