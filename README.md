@@ -65,4 +65,5 @@ npx playwright show-report
 ## Author
 
 **Sana Saleh & Nedal Shoqo**
+
 If you like this repo, don't forget to ⭐ star it!
