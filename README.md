@@ -19,7 +19,7 @@ It tests essential features such as login, cart functionality, checkout, and pro
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/project-playwright.git
+   git clone https://github.com/SanaMahmoodd/Playwright-Final-Project.git
    cd project-playwright
    ```
 
