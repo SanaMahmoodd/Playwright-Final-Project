@@ -11,9 +11,9 @@ dotenv.config();
 
 test.describe('Remove Feature', () => {  // this for chrome and edge
   test('should Remove items From Cart using edge', async ({ page }) => {
-      const browser = await chromium.launch({ headless: false }); 
+      //const browser = await chromium.launch({ headless: false }); 
 
-    page = await browser.newPage();
+    //page = await browser.newPage();
     const inventoryPage = new InventoryPage(page);
     const loginPage = new LoginPage(page);
 
@@ -32,10 +32,10 @@ test.describe('Remove Feature', () => {  // this for chrome and edge
 
 test.describe('Remove Feature', () => { // test for firefox
   test('should Remove items From Cart using firefox', async ({ page }) => {
-      const browser = await firefox.launch({ headless: false });
+      //const browser = await firefox.launch({ headless: false });
 
       
-    page = await browser.newPage();
+    //page = await browser.newPage();
     const loginPage = new LoginPage(page);
     const inventoryPage = new InventoryPage(page);
 
@@ -45,6 +45,10 @@ test.describe('Remove Feature', () => { // test for firefox
     await inventoryPage.addItemToCart();
     await inventoryPage.goToCart();
 
+    const cartItem = page.locator('.cart_item');
+    await expect(cartItem).toBeVisible();
     await inventoryPage.removeItemFromCart();
+    await expect(cartItem).not.toBeVisible();
+
   });
 });

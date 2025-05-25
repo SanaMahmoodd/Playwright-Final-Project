@@ -4,8 +4,8 @@ import { InventoryPage } from '../pages/InventoryPage';
 import { SortPages } from '../pages/SortPage';
 
 import * as dotenv from 'dotenv';
-const { chromium } = require('playwright');
-const { firefox } = require('playwright');
+//const { chromium } = require('playwright');
+//const { firefox } = require('playwright');
 
 dotenv.config();
 
@@ -23,6 +23,7 @@ test.describe('Sort Items From A-Z', () => {
 
     const sort = new SortPages(page);
     await sort.sortItemsAtoZ();
+    await expect(page.locator('.product_sort_container')).toHaveValue('az');
 
   });
 });
@@ -32,6 +33,7 @@ test.describe('Sort Items From Z-A', () => {
 
     const sort = new SortPages(page);
     await sort.sortItemsZtoA();
+    await expect(page.locator('.product_sort_container')).toHaveValue('za');
 
   });
 });
@@ -41,6 +43,7 @@ test.describe('Sort Items From High to Low', () => {
 
     const sort = new SortPages(page);
     await sort.sortItemsHighToLow();
+    await expect(page.locator('.product_sort_container')).toHaveValue('hilo');
 
   });
 });
@@ -49,6 +52,7 @@ test.describe('Sort Items From Low to High', () => {
 
     const sort = new SortPages(page);
     await sort.sortItemsLowToHigh();
+    await expect(page.locator('.product_sort_container')).toHaveValue('lohi');
 
   });
 });
